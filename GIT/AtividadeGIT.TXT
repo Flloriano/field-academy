@@ -1,0 +1,37 @@
+mkdir Atividade_GIT
+
+cd GIT
+
+git init
+
+echo "A procura da felicidade" >> arquivo.txt
+echo "Homens de honra" >> arquivo.txt
+echo "Desafiando gigantes" >> arquivo.txt
+
+git status
+
+git add -A
+
+git commit -m "<descrição> Atividade GIT: Criar arquivo.txt"
+
+git log (git list)
+
+git branch GIT2 
+git checkout GIT2
+
+echo "Mãos talentosas, O homem que mudou o jogo" atividade.txt
+
+git add -A
+
+git commit -m "<descrição> Atividade GIT: inclusão de novos filmes na lista"
+
+git checkout master
+
+
+git merge GIT2
+
+git --oneline --decorate --all (depois) => git --oneline --decorate
+
+git remote add origin https://github.com/Flloriano/filmes.git
+
+

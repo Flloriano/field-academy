@@ -1,0 +1,69 @@
+Instalar Git;
+
+(Aula 1)
+
+site;
+http://git-scm.com
+
+
+Comando para instalar o GIT;
+sudo apt-get install git (comando ubuntu).
+
+git version (mostrar a versão)
+
+Criar Repositório Local;
+git init (escolher a pasta e aplicar esse comando dentro dela)
+
+tree .git/ => mostra a estrutura de pasta (mostra como será armazenado o projeto no git).
+
+git add (adiciona os arquivos no git para que possa usar o commit, sem adiciona-los não é possível usar os comandos do git).
+git add -A ou -all (para adicionar todos os arquivos de um só vez).
+
+git status => mostar se os arquivos já foram adicionados.
+
+
+
+** o git usa hash e criar blob para armazenar, com isso melhora sua indexação **
+
+git commit -m "teste.txt e teste1.txt"
+
+
+git log (mostar o histório dos commits já realizados).
+git log --oneline (mostra em um linha apenas)
+git log --oneline --decorate
+git log --oneline --decorate --all (mostra todas as feature)
+git log --oneline --decorate --all --graph (mostra todas as feature com conteudo separado mostrando os arquivos de cada feature)
+
+
+* Branch => é uma nova linha de desenvolvimento que permite isloar o código de uma nova funcionalidade, mantendo a linha estável.
+
+git brancgit branch feature1 => criar um branch
+git branch -d feature1 (apaga a feature criada)
+git checkout -b feature2 (realiza a criação da feature e já faz o checkout nela).
+
+git checkout feature1 => para entrar na feature1
+
+cat .git/HEAD => mostar o local que está
+
+
+git merge feature1
+
+* Stash => Area onde é possível armazenar os códigos sem realizar o COMMIT.
+
+
+git stash save "h.txt"
+
+git stash apply stash@{0} => trás do stash
+
+git stash drop stash{0} => apaga do stash
+
+git stash pop => 
+
+git stash branch feature => criar em stash
+
+
+
+
+Push => Atualizar repositorio remoto
+
+

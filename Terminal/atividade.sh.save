@@ -1,0 +1,4 @@
+#!/bin/bash
+#criar variavel
+atividade = "Atidade"
+echo $atividade

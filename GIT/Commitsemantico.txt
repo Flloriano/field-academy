@@ -1,0 +1,26 @@
+[200~Tipos
+Os tipos são a descrição inicial de o que o commit está realizando, sendo obrigatórios e devendo seguir um padrão bem definido. Abaixo, vou descrever os tipos que mais utilizamos no projeto hoje. Eles foram escolhidos para se adaptar às necessidades do nosso projeto, tendo como base o Conventional Commits, e realizando algumas pequenas modificações.
+
+feat: utilizado quando se adiciona alguma nova funcionalidade do zero ao código/serviço/projeto.
+Exemplo: adição de um novo endpoint para uma API REST ou um novo consumer para um serviço de mensageria.
+
+fix: usado quando existem erros de código que estão causando bugs.
+Exemplo: proteção de uma variável que está gerando um NullPointerException em produção.
+
+refactor: utilizado na realização de uma refatoração que não causará impacto direto no código ou em qualquer lógica/regra de negócio.
+Exemplo: melhorias de performance revisadas em um code review.
+
+style: utilizado quando são realizadas mudanças no estilo e formatação do código que não irão impactar em nenhuma lógica do código.
+Exemplo: realizar a indentação de um código.
+
+test: usado quando se realizam alterações de qualquer tipo nos testes, seja a adição de novos testes ou a refatoração de testes já existentes.
+Exemplo: adição de testes de contrato e modificação de testes unitários.
+
+doc: ideal para quando se adiciona ou modifica alguma documentação no código ou do repositório em questão.
+Exemplo: adição de documentação sobre o response de uma API ou adição de um README.md.
+
+env: utilizado quando se modifica ou adiciona algum arquivo de CI/CD.
+Exemplo: modificar um comando do Dockerfile ou adicionar um step a um Jenkinsfile.
+
+build: usado quando se realiza alguma modificação em arquivos de build e dependências.
+Exemplo: adição de dependências do Apache Kafka.

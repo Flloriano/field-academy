@@ -1,0 +1,10 @@
+#!/bin/bash
+
+Pasta = FIELD_ACADEMY
+
+if [ -d "$Pasta"]; then
+echo "$Pasta existe/"
+else 
+echo "$Pasta não existe"
+mkdir {FIELD_ACADEMY}
+fi
