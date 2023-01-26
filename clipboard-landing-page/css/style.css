@@ -175,6 +175,22 @@ div.container4 {
   footer {
     flex-direction: column;
   }
+
+  img.computer {
+    width: 400px;
+  }
+
+  img.devices {
+    width: 500px;
+  }
+
+  p.ptext2 {
+    text-align: center;
+  }
+
+  h2.headertext2 {
+    text-align: center;
+  }
 }
 
 h2.headertext2 {
@@ -215,20 +231,18 @@ img.lists {
 }
 
 img.computer {
-  position: relative;
   top: 20px;
-  max-width: 590px;
-  min-width: 50px;
-  /*width: 550px;*/
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
   height: auto;
   padding: 30px;
-  justify-content: left;
+  justify-content: right;
 }
 
 img.devices {
   position: relative;
   max-width: 800px;
-  min-width: 90px;
   height: auto;
   display: block;
   margin-left: auto;
@@ -258,7 +272,9 @@ img.iconfooter {
 img.footer {
   height: 70px;
   width: 80px;
+  padding-left: 20px;
 }
+
 
 footer {
   display: flex;
@@ -271,6 +287,7 @@ footer {
   margin-left: auto;
   margin-top: auto;
   align-items: center;
+  padding: 10px;
 }
 
 div.imgfooter {
@@ -279,7 +296,6 @@ div.imgfooter {
   margin-left: 100px;
   justify-content: center;
   margin-top: 20px;
-
 }
 
 p.pfooter {
