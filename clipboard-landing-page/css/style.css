@@ -11,7 +11,7 @@ body {
 
 * {
   margin: 4px;
-  padding: 2px;
+  padding: 10px;
 }
 
 .attribution a {
@@ -29,7 +29,8 @@ div.header {
 
 div.header2 {
   display: block;
-  height: 100%;
+  height: 200px;
+  margin-top: 20px;
   position: relative;
   text-align: center;
 }
@@ -152,49 +153,71 @@ div.container4 {
   margin-left: 300px;
 }
 
+.flex-container2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .flex-container {
   display: flex;
   flex-direction: row;
 }
 
-/*
-div.container5 {
-  flex-direction: row;
-  display: flex;
-  max-width: 1440px;
-  min-width: 375px;
-}*/
-
 @media (max-width: 800px) {
   .flex-container {
+    flex-direction: column;
+  }
+  .flex-container2 {
+    flex-direction: column;
+  }
+
+  footer {
     flex-direction: column;
   }
 }
 
 h2.headertext2 {
   font-family: 'Bai Jamjuree';  
+  margin-top: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+}
+
+h3 {
+  text-align: center;
 }
 
 p.ptext2 {
   font-family: 'Bai Jamjuree';
   word-break:keep-all;
-  height: 50px;
-  width: 400px;
+  height: 30px;
+  width: 405px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 p.ptext3 {
   font-family: 'Bai Jamjuree';
   word-break:keep-all;
   height: 40px;
-  max-width: 30px;
-  min-width: 100px;
+  max-width: 350px;
+  text-align: center;
   /*width: 300px;*/
+}
+
+img.lists {
+  align-items: auto;
+  justify-content: auto;
+  margin-left: 41%;
+  margin-right: 50%;
 }
 
 img.computer {
   position: relative;
-  top: 40px;
-  max-width: 550px;
+  top: 20px;
+  max-width: 590px;
   min-width: 50px;
   /*width: 550px;*/
   height: auto;
@@ -226,32 +249,39 @@ img.lgemp {
 img.iconfooter {
   height: 20px;
   width: 20px;
-  margin-left: 90px;
-  margin-top: 20px; 
-  justify-content: left;
+  margin-left: 50px;
+  margin-top: 60px; 
+  justify-content: center;
+  padding: 0px;
 }
+
+img.footer {
+  height: 70px;
+  width: 80px;
+}
+
 
 
 footer {
+  display: flex;
+  flex-direction: row;
   background-color:rgb(216, 216, 212);
-  height: 100px;
-  width: 1200px;
+  height: auto;
+  max-width: 1440px;
+  min-width: 375px;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 50px;1440px
-  height: 50px;
-  width: 60px;
-  margin-left: 20px;
-  margin-top: 10px; 
-  justify-content: center;
+  margin-top: auto;
+  align-items: center;
 }
 
 div.imgfooter {
-  height: 80px;
-  width: 180px;
+  height: 50px;
+  width: 60px;
   margin-left: 100px;
   justify-content: center;
   margin-top: 20px;
+
 }
 
 p.pfooter {
@@ -260,7 +290,8 @@ p.pfooter {
   height: 40px;
   width: 150px;
   margin-top: -40px;
-  margin-left: 30px ;
+  margin-left: 30px;
+  
 }
 div.icfooter {
   margin-left: 800px;
