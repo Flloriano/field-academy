@@ -113,14 +113,15 @@ button.btnmac {
 div.container {
   display: flex;
   align-items: center;
-  max-width: 1440px;
+  max-width: 1440pmax-width: 200px;
+  min-width: 100px;x;
   min-width: 375px;
   height: auto;
   margin-left: auto;
   margin-right: auto;
 }
 
-div.container2 {
+div.container2 {margin-right: auto;
   display: flex;
   flex-direction: row;
   text-align: center;
@@ -177,6 +178,8 @@ div.container5 {
 @media (max-width: 800px) {
   .flex-container {
     flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .flex-container2 {
@@ -185,23 +188,45 @@ div.container5 {
 
   footer {
     flex-direction: column;
+    align-items: center;
+    margin-top: auto;
   }
 
   img.computer {
-    width: 400px;
+    width: 250px;
   }
 
   img.devices {
-    width: 500px;
+    width: 350px;
+  }
+
+  p.ptext {
+    min-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
   }
 
   p.ptext2 {
-    text-align: center;
+    min-width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;    
   }
 
   h2.headertext2 {
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
+
+  img.iconfooter {
+    height: 30px;
+    width: 40px;
+    margin: -20px 60px;
+    padding: 5px;
+  }
+
 }
 
 h2.headertext2 {
@@ -220,14 +245,14 @@ p.ptext2 {
   font-family: 'Bai Jamjuree';
   word-break:keep-all;
   height: 30px;
-  width: 405px;
-  margin-left: auto;
+  width: 350px;
+  margin-left: 0%;
   margin-right: auto;
 }
 
 p.ptext3 {
   font-family: 'Bai Jamjuree';
-  word-break:keep-all;
+  word-break:keep-all;center
   height: 40px;
   max-width: 350px;
   text-align: center;
@@ -272,12 +297,12 @@ img.lgemp {
 }
 
 img.iconfooter {
-  height: 20px;
-  width: 20px;
-  margin-left: 50px;
+  height: 30px;
+  width: 40px;
+  margin-left: 70px;
   margin-top: 60px; 
   justify-content: center;
-  padding: 0px;
+  padding: -10px;
 }
 
 img.footer {
@@ -296,7 +321,7 @@ footer {
   min-width: 375px;
   margin-right: auto;
   margin-left: auto;
-  margin-top: auto;
+  margin-top: 20%;
   align-items: center;
   padding: 10px;
 }
