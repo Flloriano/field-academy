@@ -30,8 +30,7 @@ div.header {
 div.header2 {
   display: block;
   height: 200px;
-  margin-top: 20px;
-  position: relative;
+  margin-top: 10px;
   text-align: center;
 }
 
@@ -47,6 +46,7 @@ img.header1 {
   filter: invert(100%);
 }
 
+
 img.logo {
   position: relative;
   top: 60px;
@@ -61,6 +61,14 @@ img.logo {
 
 h1.headertext {
   margin-top: 5%;
+  font-family: 'Bai Jamjuree';
+  font-weight: 400, 600;
+  text-align: center;
+  padding: 20px;
+}
+
+h1.headertext2 {
+  margin-top: 10%;
   font-family: 'Bai Jamjuree';
   font-weight: 400, 600;
   text-align: center;
@@ -90,6 +98,7 @@ button.btnios {
   float: center;
   font-family: 'Bai Jamjuree';
   padding: 12px;
+  position: relative;
 }
 
 button.btnios:hover {
@@ -107,14 +116,20 @@ button.btnmac {
   font-size: 18px;
   cursor: pointer;
   float: center;
-  display: inline-block;
+  font-family: 'Bai Jamjuree';
+  padding: 12px;
+  position: relative;
+}
+
+button.btnmac:hover {
+  background-color: #1a1ee7;
 }
 
 div.container {
   display: flex;
   align-items: center;
-  max-width: 1440pmax-width: 200px;
-  min-width: 100px;x;
+  max-width: 1440px;
+  min-width: 100px;
   min-width: 375px;
   height: auto;
   margin-left: auto;
@@ -226,6 +241,19 @@ div.container5 {
     margin: -20px 60px;
     padding: 5px;
   }
+  div.header2 {
+    display: block;
+    height: 350px;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  img.footer {
+    height: 60px;
+    width: 70px;
+    padding-left: 5%;
+  }
+  
 
 }
 
@@ -252,7 +280,7 @@ p.ptext2 {
 
 p.ptext3 {
   font-family: 'Bai Jamjuree';
-  word-break:keep-all;center
+  word-break:keep-all;
   height: 40px;
   max-width: 350px;
   text-align: center;
