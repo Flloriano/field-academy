@@ -227,7 +227,8 @@ div.container5 {
     text-align: center;
     height: 40px;
     width: 50px;
-    margin-right: -30px;
+    margin-right: 50%;
+    margin-left: -30px;
     word-break: break-all;
   }
 
