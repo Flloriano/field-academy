@@ -114,19 +114,6 @@ button.btnmac:hover {
   background-color: #4c4ece;
 }
 
-img.computer {
-  position: relative;
-  top: 40px;
-  max-width: 400px;
-  min-width: 50px;
-  /*width: 550px;*/
-  height: auto;
-  padding: 5px;
-  justify-content: left;
-}
-
-
-
 div.container {
   display: flex;
   align-items: center;
@@ -168,8 +155,6 @@ div.container4 {
 .flex-container {
   display: flex;
   flex-direction: row;
-  text-align: left;
-  max-width: 1440px;
 }
 
 /*
@@ -180,7 +165,7 @@ div.container5 {
   min-width: 375px;
 }*/
 
-@media (min-width: 700px) {
+@media (max-width: 800px) {
   .flex-container {
     flex-direction: column;
   }
@@ -206,6 +191,16 @@ p.ptext3 {
   /*width: 300px;*/
 }
 
+img.computer {
+  position: relative;
+  top: 40px;
+  max-width: 550px;
+  min-width: 50px;
+  /*width: 550px;*/
+  height: auto;
+  padding: 30px;
+  justify-content: left;
+}
 
 img.devices {
   position: relative;
@@ -227,6 +222,15 @@ img.lgemp {
   margin-right: auto;
   justify-content: center;
 }
+
+img.iconfooter {
+  height: 20px;
+  width: 20px;
+  margin-left: 90px;
+  margin-top: 20px; 
+  justify-content: left;
+}
+
 
 footer {
   background-color:rgb(216, 216, 212);
@@ -265,13 +269,6 @@ div.icfooter {
   width: 90px;
   display: flex;
   flex-direction: row;
-}
-img.iconfooter {
-  height: 20px;
-  width: 20px;
-  margin-left: 90px;
-  margin-top: 20px; 
-  justify-content: left;
 }
 
 
