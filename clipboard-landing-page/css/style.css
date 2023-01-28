@@ -11,11 +11,7 @@ body {
 
 * {
   margin: 4px;
-<<<<<<< HEAD
-  padding: 7px;
-=======
   padding: 10px;
->>>>>>> 21cd8211b1896b6d26bf8671ab350729f6061451
 }
 
 .attribution a {
@@ -34,12 +30,7 @@ div.header {
 div.header2 {
   display: block;
   height: 200px;
-<<<<<<< HEAD
-  margin-top: 20px;
-  position: relative;
-=======
   margin-top: 10px;
->>>>>>> 21cd8211b1896b6d26bf8671ab350729f6061451
   text-align: center;
 }
 
@@ -174,11 +165,6 @@ div.container4 {
   margin-left: 300px;
 }
 
-<<<<<<< HEAD
-.flex-container2 {
-  display: flex;
-  flex-direction: row;
-=======
 div.container5 {
   display: flex;
   flex-direction: row;
@@ -197,7 +183,6 @@ div.container5 {
   margin-right: auto;
   margin-left: 60px;
   height: auto;
->>>>>>> 21cd8211b1896b6d26bf8671ab350729f6061451
 }
 
 .flex-container {
@@ -207,7 +192,6 @@ div.container5 {
 
 @media (max-width: 800px) {
   .flex-container {
-    display: flex;
     flex-direction: column;
     margin-left: auto;
     margin-right: auto;
@@ -215,26 +199,10 @@ div.container5 {
 
   .flex-container2 {
     flex-direction: column;
-<<<<<<< HEAD
-    text-align: center;
-  }
-
-  img.computer {
-    min-width: 60px;
-    top: 20px;
-  }
-
-  img.devices {
-    max-width: 100px;
-    justify-content: center;
-=======
->>>>>>> 21cd8211b1896b6d26bf8671ab350729f6061451
   }
 
   footer {
     flex-direction: column;
-<<<<<<< HEAD
-=======
     margin-top: auto;
     margin-left: auto;
     margin-right: auto;
@@ -253,27 +221,19 @@ div.container5 {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
->>>>>>> 21cd8211b1896b6d26bf8671ab350729f6061451
   }
 
   p.ptext2 {
     text-align: center;
-<<<<<<< HEAD
-=======
     height: 40px;
     width: 50px;
     margin-right: 50%;
     margin-left: -30px;
     word-break: break-all;
->>>>>>> 21cd8211b1896b6d26bf8671ab350729f6061451
   }
 
   h2.headertext2 {
     text-align: center;
-<<<<<<< HEAD
-  }
-
-=======
     margin-left: auto;
     margin-right: auto;
   }
@@ -306,7 +266,6 @@ div.container5 {
   img.header1 {
     background-image: url(../images/bg-header-mobile.png);
   }
->>>>>>> 21cd8211b1896b6d26bf8671ab350729f6061451
 
 }
 
@@ -326,13 +285,7 @@ p.ptext2 {
   font-family: 'Bai Jamjuree';
   word-break:keep-all;
   height: 30px;
-<<<<<<< HEAD
-  width: 405px;
-  margin-left: auto;
-  margin-right: auto;
-=======
   width: 350px;
->>>>>>> 21cd8211b1896b6d26bf8671ab350729f6061451
 }
 
 p.ptext3 {
@@ -353,13 +306,9 @@ img.lists {
 
 img.computer {
   top: 20px;
-<<<<<<< HEAD
-  width: 550px;
-=======
   max-width: 550px;
   margin-left: auto;
   margin-right: auto;
->>>>>>> 21cd8211b1896b6d26bf8671ab350729f6061451
   height: auto;
   padding: 30px;
   justify-content: right;
@@ -370,6 +319,8 @@ img.devices {
   max-width: 800px;
   height: auto;
   display: block;
+  margin-left: auto;
+  margin-right: auto;
   padding: 2px;
   justify-content: center;
 }
@@ -384,21 +335,12 @@ img.lgemp {
 }
 
 img.iconfooter {
-<<<<<<< HEAD
-  height: 20px;
-  width: 20px;
-  margin-left: 50px;
-  margin-top: 60px; 
-  justify-content: center;
-  padding: 0px;
-=======
   height: 30px;
   width: 40px;
   margin-left: 70px;
   margin-top: 60px; 
   justify-content: center;
   padding: -10px;
->>>>>>> 21cd8211b1896b6d26bf8671ab350729f6061451
 }
 
 img.footer {
@@ -417,11 +359,7 @@ footer {
   min-width: 375px;
   margin-right: auto;
   margin-left: auto;
-<<<<<<< HEAD
-  margin-top: auto;
-=======
   margin-top: 20%;
->>>>>>> 21cd8211b1896b6d26bf8671ab350729f6061451
   align-items: center;
   padding: 10px;
 }
