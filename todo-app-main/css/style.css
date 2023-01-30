@@ -77,6 +77,9 @@ background:rgb(35, 33, 36);
   position: absolute;
   color: aliceblue;
   padding: 2px;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 100;
+  font-size: 14px;
 }
 
 .tasks-container [type='checkbox']:checked + div {
@@ -101,17 +104,17 @@ background:rgb(35, 33, 36);
 
 .tasks-container [type='button'] {
   background:rgb(35, 33, 36);
-  color:rgb(109, 83, 105);
+  color:rgb(126, 117, 124);
   width: 20px;
   height: 20px;
-  font-size: 18px;
-  border: 5px solid var(--cinza);
+  font-size: 15px;
+  border: 1px solid var(--cinza);
   cursor: pointer;
-  font-family: "Josefin Sans", sans-serif;
-  font-weight: 200;
+  font-family: "Comic Sans", sans-serif;
+  font-weight: 100;
   margin-left: 95%;
   margin-right: 90%;
-  margin-top: -40%;
+  margin-top: -1000%;
 }
 
 
@@ -160,20 +163,21 @@ label{
   height: 25px;
   width: 25px;
   transition: all 0.15s ease-out 0s;
-  background: #cbd1d8;
-  border: none;
-  color: #fff;
+  background:rgb(35, 33, 36);
+  border-color:linear-gradient(180deg, rgb(133, 240, 234) 0%, rgb(133, 7, 243) 100%);
+  color: rgb(169, 121, 197);
   cursor: pointer;
   display: inline-block;
-  margin-right: 2rem;
+  margin-right: 1rem;
   outline: none;
   position: relative;
   z-index: 1000;
   border-radius: 100px;
+  border: solid 1px;
 }
 
 .tasks-container [type='radio']:hover {
-  background: #9faab7;
+  background: #6b5f75;
   border-radius: 100px;
   margin-top: 1px;
 }
@@ -182,6 +186,7 @@ label{
   background: linear-gradient(180deg, rgb(133, 240, 234) 0%, rgb(133, 7, 243) 100%);
   border-radius: 100px;
   margin-top: auto;
+  color: aliceblue;
 }
 
 .tasks-container [type='radio']:checked::before {
@@ -189,7 +194,7 @@ label{
   height: 9px;
   display:flex;
   content: '\f00c';
-  font-size: 20px;
+  font-size: 15px;
   font-weight:bold;
   position: absolute;
   align-items:center;
