@@ -82,11 +82,8 @@ background:rgb(35, 33, 36);
   font-size: 14px;
 }
 
-.tasks-container [type='checkbox']:checked + div {
-  text-decoration:line-through;
-  background: linear-gradient(60deg, rgb(133, 240, 234) 0%, rgb(133, 7, 243) 100%);
-  background-size: 20px;
-  border-radius: 50%;
+.tasks-container input[type='radio']:checked + div {
+  text-decoration: line-through;
 }
 
 
@@ -121,6 +118,10 @@ background:rgb(35, 33, 36);
 img.fundo-task {
   background-image: url(images/icon-sun.svg);
   background-size: 100%;
+}
+
+div.todo {
+  display: flex;
 }
 
 @media (max-width: 800px) {
@@ -187,6 +188,7 @@ label{
   border-radius: 100px;
   margin-top: auto;
   color: aliceblue;
+  text-decoration: line-through;
 }
 
 .tasks-container [type='radio']:checked::before {
