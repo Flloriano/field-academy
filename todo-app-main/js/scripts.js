@@ -1,129 +1,132 @@
-const inputElement = document.querySelector(".new-task-input");
-const addTaskButton = document.querySelector(".new-task-button");
+'use strict'
 
-const tasksContainer = document.querySelector(".tasks-container");
+// criar array que representara nosso 'banco de dados' local
+let banco = []
 
-const validateInput = () => inputElement.value.trim().length > 0;
+// armazenar em constante array function que retorna os valores da chave 'todoList'
+const getBanco = () => JSON.parse(localStorage.getItem('todoList')) ?? []
 
-const handleAddTask = () => {
-  const inputIsValid = validateInput();
+// armazenar em constante array function que define um valor da chave 'tarefa' do nosso 'todoList'
+const setBanco = (banco) => localStorage.setItem('todoList', JSON.stringify(banco))
 
-  console.log(inputIsValid);
+// so para ver o que tem no nosso array de objetos que representa nosso 'banco de dados' local
+//console.log(JSON.parse(localStorage.getItem('todoList')))
 
-  if (!inputIsValid) {
-    return inputElement.classList.add("error");
-  }
+// ACOES DEFINIDAS EM ARROW FUNCTIONS
 
-  const taskItemContainer = document.createElement("div");
-  taskItemContainer.classList.add("task-item");
+// CRIAR ITEM NA NOSSA LISTAGEM DE TAREFAS (label + definir class + criar input com radio e botao)
+const criarItem = (tarefa, status, indice) => {
+    // criar label
+    const item = document.createElement('label')
 
-  const taskContent = document.createElement("p");
-  taskContent.innerText = inputElement.value;
+    // adicionar class 'todo__item' ao label
+    item.classList.add('todo__item')
 
-  taskContent.addEventListener("click", () => handleClick(taskContent));
+    // definir no conteudo do label input radio div com texto da tarefa e input button
+    item.innerHTML = `
+        <div>
+        <input type="radio" ${status} data-indice=${indice}>
+        ${tarefa}
+        <input type="button" value="X" data-indice=${indice}>
+        </div>
+    `
+    // definir o novo item como filho do nosso todoList (div)    
+    document.getElementById('todoList').appendChild(item)
+}
 
-  const deleteItem = document.createElement("i");
-  deleteItem.classList.add("far");
-  deleteItem.classList.add("fa-trash-alt");
+// LIMPAR TAREFAS
+// para evitar insercao duplica da lista toda quando chamamos a funcao atualizarTela()
+const limparTarefas = () => {
+    // elemento todoList que eh a nossa lista
+    const todoList = document.getElementById('todoList')
 
-  deleteItem.addEventListener("click", () =>
-    handleDeleteClick(taskItemContainer, taskContent)
-  );
+    // enquanto todoList tiver um primeiro filho
+    // remova o ultimo filho que foi adicionado ao todoList
+    // lembrando que a lista eh readicionada a cada nova insercao
+    while (todoList.firstChild) { todoList.removeChild(todoList.lastChild) }
+}
 
-  taskItemContainer.appendChild(taskContent);
-  taskItemContainer.appendChild(deleteItem);
+// ATUALIZAR TELA, limpar tela, pegar o 'banco' e criarItem atualizando assim a lista de tarefas
+const atualizarTela = () => {
+    limparTarefas()
+    const banco = getBanco()
+    banco.forEach ( (item, indice) => criarItem (item.tarefa, item.status, indice))
+}
 
-  tasksContainer.appendChild(taskItemContainer);
+// INSERIR ITEM NA LISTA DE TAREFAS apos teclar Enter
+const inserirItem = (evento) => {
+    // pegar evento teclar e armazenar na constante tecla
+    const tecla = evento.key
 
-  inputElement.value = "";
+    // pegar o valor (nome) da tecla que foi pressionada (alvo do evento)
+    const texto = evento.target.value
 
-  updateLocalStorage();
-};
+    // se a tecla pressionada foi Enter
+    if (tecla === 'Enter') {
+        // pegue o banco
+        const banco = getBanco()
 
-const handleClick = (taskContent) => {
-  const tasks = tasksContainer.childNodes;
+        // faca um push (adicione) de chave/valor da tarefa e status
+        banco.push ({'tarefa': texto, 'status': ''})
 
-  for (const task of tasks) {
-    const currentTaskIsBeingClicked = task.firstChild.isSameNode(taskContent);
+        // coloque a chave/valor no banco
+        setBanco(banco)
 
-    if (currentTaskIsBeingClicked) {
-      task.firstChild.classList.toggle("completed");
-    }
-  }
-
-  updateLocalStorage();
-};
-
-const handleDeleteClick = (taskItemContainer, taskContent) => {
-  const tasks = tasksContainer.childNodes;
-
-  for (const task of tasks) {
-    const currentTaskIsBeingClicked = task.firstChild.isSameNode(taskContent);
-
-    if (currentTaskIsBeingClicked) {
-      taskItemContainer.remove();
-    }
-  }
-
-  updateLocalStorage();
-};
-
-const handleInputChange = () => {
-  const inputIsValid = validateInput();
-
-  if (inputIsValid) {
-    return inputElement.classList.remove("error");
-  }
-};
-
-const updateLocalStorage = () => {
-  const tasks = tasksContainer.childNodes;
-
-  const localStorageTasks = [...tasks].map((task) => {
-    const content = task.firstChild;
-    const isCompleted = content.classList.contains("completed");
-
-    return { description: content.innerText, isCompleted };
-  });
-
-  localStorage.setItem("tasks", JSON.stringify(localStorageTasks));
-};
-
-const refreshTasksUsingLocalStorage = () => {
-  const tasksFromLocalStorage = JSON.parse(localStorage.getItem("tasks"));
-
-  if (!tasksFromLocalStorage) return;
-
-  for (const task of tasksFromLocalStorage) {
-    const taskItemContainer = document.createElement("div");
-    taskItemContainer.classList.add("task-item");
-
-    const taskContent = document.createElement("p");
-    taskContent.innerText = task.description;
-
-    if (task.isCompleted) {
-      taskContent.classList.add("completed");
+        // atualize a tela
+        atualizarTela()
+    
+        // limpe o value do evento da ultima tarefa digitada no input
+        evento.target.value = ''
     }
 
-    taskContent.addEventListener("click", () => handleClick(taskContent));
+}
 
-    const deleteItem = document.createElement("i");
-    deleteItem.classList.add("far");
-    deleteItem.classList.add("fa-trash-alt");
+// REMOVER ITEM por indice
+const removerItem = (indice) => {
 
-    deleteItem.addEventListener("click", () =>
-      handleDeleteClick(taskItemContainer, taskContent)
-    );
+    // pegue o banco
+    const banco = getBanco()
 
-    taskItemContainer.appendChild(taskContent);
-    taskItemContainer.appendChild(deleteItem);
+    // faca um splice (corte) no seu (banco que eh um array) do indice, so uma posicao
+    banco.splice (indice, 1)
 
-    tasksContainer.appendChild(taskItemContainer);
-  }
-};
+    // set do splice no seu banco, permitir a persistencia dos dado
+    setBanco(banco)
 
-refreshTasksUsingLocalStorage();
+    // atualizar tela
+    atualizarTela()
 
-addTaskButton.addEventListener("click", () => handleAddTask());
+}
 
-inputElement.addEventListener("change", () => handleInputChange());
+// ATUALIZAR ITEM ou Altear status para checked ou tirar checked
+const atualizarItem = (indice) => {
+    const banco = getBanco()
+    banco[indice].status = banco[indice].status === '' ? 'checked' : ''
+    setBanco(banco)
+    atualizarTela()
+}
+
+// O QUE FAZER QUANDO CLICARMOS EM UMA TAREFA, por meio do evento click
+const clickItem = (evento) => {
+
+    // selecionar o elemento (tarefa) e pegar o evento relativo a ele
+    const elemento = evento.target
+
+    // se for um click no botao X iremos remover a tarefa da listagem
+    if (elemento.type === 'button') {
+        const indice = elemento.dataset.indice
+        removerItem (indice)
+    // senao se for um click no botao radio iremos definir como checado ou vice-versa
+    }else if (elemento.type === 'radio') {
+        const indice = elemento.dataset.indice
+        atualizarItem (indice)
+    }
+    //console.log (elemento.type)
+}
+
+// adicionar escutadore de eventos de tecla pressionada e de click
+document.getElementById('newItem').addEventListener('keypress', inserirItem)
+document.getElementById('todoList').addEventListener('click', clickItem)
+
+// atualizar a tela
+atualizarTela()

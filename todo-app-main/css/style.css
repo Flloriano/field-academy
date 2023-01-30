@@ -50,65 +50,70 @@ div.task-titulo-trcss {
 }
 
 .new-task-container input {
-flex: 3;
 font-size: 1rem;
 border: none;
-border: 2px solid rgb(240, 237, 237);
-border-radius: 5px;
 padding: 12px;
 font-weight: 500px;
 position: absolute;
-margin-top: 11%;
+margin-top: 12%;
 margin-left: 30%;
 color: aliceblue;
-width: 350px;
+width: 390px;
 height: 40px;
-background:rgb(28, 26, 29);
-}
-
-.new-task-button {
-  flex: 1;
-  border-radius: 5px;
-  font-weight: 500px;
-  height: 40px;
-  font-size: 1rem;
-  border: none;
-  position: absolute;
-  margin-top: 11%;
-  margin-left: 56%;
-  cursor: pointer;
-  background: rgb(159, 173, 173);
-}
-
-.new-task-button:hover {
-  background: rgb(123, 9, 223);
+background:rgb(35, 33, 36);
 }
 
 .tasks-container {
-  background:rgb(28, 26, 29);
-  padding: 30px 20px;
-  margin-top: 15%;
+  display: inline-block;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  background:rgb(35, 33, 36);
+  margin-top: 16%;
   margin-left: 30%;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-  width: 26%;  
+  width: 390px;  
   height: auto;
   position: absolute;
   color: aliceblue;
+  padding: 5px;
 }
 
-.tasks-containerbtn {
-  background:rgb(28, 26, 29);
-  padding: 30px 20px;
-  margin-top: 20%;
-  margin-left: 30%;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-  width: 26%;  
-  height: auto;
-  position: absolute;
-  border: none;
-  border-bottom: #dcebe4;
-  border-color: rgb(104, 104, 102);
+.tasks-container [type='checkbox']:checked + div {
+  text-decoration:line-through;
+  background: linear-gradient(60deg, rgb(133, 240, 234) 0%, rgb(133, 7, 243) 100%);
+  background-size: 20px;
+  border-radius: 50%;
 }
+
+
+
+.tasks-container [type='radio'] {
+    width: 20px;
+    height: 20px;
+    border: 5px solid var(--cinza);
+    border-style: groove;
+    border-bottom: 1px;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.tasks-container [type='button'] {
+  margin-right: 1px;
+  background:rgb(35, 33, 36);
+  color:rgb(109, 83, 105);
+  width: 20px;
+  height: 20px;
+  font-size: 18px;
+  border: 5px solid var(--cinza);
+  cursor: pointer;
+  line-height: 135%;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 200;
+  margin-left: 6rem;
+}
+
 
 img.fundo-task {
   background-image: url(images/icon-sun.svg);
@@ -129,33 +134,87 @@ img.fundo-task {
   }
 }
 
-.task-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 6px;
-  margin-top: 6px;
-}
-
-.task-item i {
-  background-color: #dcebe4;
-  color: rgb(14, 9, 9);
-  padding: 12px;
-  border-radius: 5px;
-}
-
-.task-item i:hover {
-  cursor: pointer;
-}
-
-.error {
-  border: 2px solid red !important;
-}
-
-.error::placeholder {
-  color: red;
-}
-
 .completed {
   text-decoration: line-through;
 }
+
+
+label{
+  display:block;
+  line-height:18px;
+  border-radius: 100px;
+  margin-top: 0px;
+}
+
+.tasks-container [type='radio'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  position: absolute;
+  top: 5px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  transition: all 0.15s ease-out 0s;
+  background: #cbd1d8;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 2rem;
+  outline: none;
+  position: relative;
+  z-index: 1000;
+  border-radius: 100px;
+}
+
+.tasks-container [type='radio']:hover {
+  background: #9faab7;
+  border-radius: 100px;
+  margin-top: 1px;
+}
+
+.tasks-container [type='radio']:checked {
+  background: linear-gradient(180deg, rgb(133, 240, 234) 0%, rgb(133, 7, 243) 100%);
+  border-radius: 100px;
+  margin-top: auto;
+}
+
+.tasks-container [type='radio']:checked::before {
+  width: 9px;
+  height: 9px;
+  display:flex;
+  content: '\f00c';
+  font-size: 20px;
+  font-weight:bold;
+  position: absolute;
+  align-items:center;
+  justify-content:center;
+  font-family:'Font Awesome 5 Free';
+  margin-top: 8px;
+  margin-left: 8px;
+}
+
+.tasks-container [type='radio']:checked::after {
+  -webkit-animation: click-wave 0.65s;
+  -moz-animation: click-wave 0.65s;
+  animation: click-wave 0.65s;
+  background: #40e0d0;
+  content: '';
+  display: block;
+  position: relative;
+  z-index: 100;
+}
+
+.tasks-container [type='radio'].radio {
+  border-radius: 100px;
+}
+
+.tasks-container [type='radio']::after {
+  border-radius: 50px;
+}
+
