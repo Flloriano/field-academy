@@ -1,9 +1,9 @@
-const axios = require('axios');
-const cTable = require('console.table');
+const axios = require('axios').default
+const cTable = require('console.table')
 const getEndereco = async (cep) => {
     try {
-        const viaCepURL = `https://viacep.com.br/ws/${cep}/json/`
-        const {data} = await axios.get(viaCepURL)
+        const BuscarCepURL = `https://viacep.com.br/ws/${cep}/json/`
+        const {data} = await axios.get(BuscarCepURL)
 
         const table = cTable.getTable([
             {
