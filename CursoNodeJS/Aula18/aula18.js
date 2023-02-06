@@ -21,12 +21,33 @@
 //ou pode ser feito dessa forma
 
 
-function criaPessoa(nome, sobrenome, idade){
-    return{nome, sobrenome, idade};
-}
+// function criaPessoa(nome, sobrenome, idade){
+//     return{nome, sobrenome, idade};
+// }
 
-const pessoa1 = criaPessoa('Elias', 'Floriano', 25);
-const pessoa2 = criaPessoa('Emanuel', 'Souza', 18);
+// const pessoa1 = criaPessoa('Elias', 'Floriano', 25);
+// const pessoa2 = criaPessoa('Emanuel', 'Souza', 18);
 
 
-console.log(pessoa1.nome, pessoa2.nome);
+// console.log(pessoa1.nome, pessoa2.nome);
+
+
+const pessoa = {
+    nome: 'Elias',
+    sobrenome: 'Floriano',
+    idade: 30,
+
+    fala(){
+        console.log(`A minha idade atual é ${this.idade}.`);
+    },
+
+    incrementaIdade(){
+        this.idade++;
+    }
+
+};
+
+
+pessoa.fala();
+pessoa.incrementaIdade();
+pessoa.fala();
