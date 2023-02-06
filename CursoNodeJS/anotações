@@ -1,0 +1,32 @@
+npm update
+npm install express
+npm install express --save-dev //move express para a parte de desenvolvimento
+npm install express --save-prod //
+npm install express@2.1.0 //instalar versão especifica do express
+npm install express -E //Para instalar e nuncar atualizar a versão
+
+
+Versão Express   2.1.0
+
+2.major => (quando esse numero da versão muda quebra a compatilidade de coisa utilizada dentro da versão anterior).
+
+
+1.minor => (adção de novos recursos mas com compatibildiade com a versão major)             
+
+0.path => (correções de bug)
+
+ao realizar npm update apenas irá atualizar a versão minor e a path 
+express: "~2.1.0" quando está com o tio apenas atualiza a versão path
+	         													
+npm install express@2.x //instalar a ultima opção da 
+versão 2.
+
+
+npm uninstall express //Para desinstalar a verão do node express
+
+npm ls //para listar os pacotes instalados
+npm ls --depth=1 // mostrar os pacotes instalados de uma pasta para dentro.
+
+
+npm outdated //verificar as versões desatualizadas 	         													
+	         													
