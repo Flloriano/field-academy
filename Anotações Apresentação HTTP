@@ -1,0 +1,44 @@
+Conceitos Básicos - REST
+REST => seguir o padrão HTTP da forma correta
+LEVEL 0 - THE SWAMP OF POX (é quando não utiliza os methods de maneira correta, status code errado e descrições erradas).
+LEVEL 1 - RESOURCES => (quando utiliza recursos na aplicação. ex: usuários, carros, cada parte que conseguimos ler, criar e deletar).
+LEVEL 2- HTTP VERBS (Começar a seguir os verbos de maneira correta e os status cod).
+LEVEL 3 - HYPERMEDIA CONTROLS => (Permitir o usuário trafegar sem usar documento, não é necessário).
+
+OBS: vantangem de SEGUIR a arquitetura REST => dar patronização e simplifica a API. 
+
+Agilidade 
+Facilidade da manutenção
+Facilidade para consumir a API
+Escalabilidade
+Redução de custo
+
+!= REST para RESTFULL => RESTFULL: Cheio de rest ou que segue o rest de maneira adquada.
+
+
+
+código de retornos HTTP
+1-informational
+2-success
+3-redirection
+4 client error
+5- server error
+
+EX: 201 - criou user
+204 - deletou user
+200 - consultou user
+400 - Usuário enviou formato inválido de e-mail.
+
+
+diferença de PUT para PATCH 
+No PUT se tiver alguma alteração tem que enviar todos os dados no PATCH não precisa.
+
+
+method
+GET - READER
+POST - ADD
+PUT e PATCH - UPDATE
+DELETE
+
+
+

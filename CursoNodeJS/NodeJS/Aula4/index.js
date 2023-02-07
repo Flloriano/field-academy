@@ -9,7 +9,13 @@ const path = require('path');
 
 
 fs.readdir(path.resolve(__dirname))
-.then(files => console.log(files))
+.then(files => console.log
+ const table = cTable.getTable([
+    {
+        nome: data.
+    }
+  ]);
+(files))
 .catch(e => console.log(e));
 */
 //Criando função

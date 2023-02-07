@@ -1,31 +1,15 @@
-// // const nome = 'Elias';
-// // const sobrenome = 'Floriano';
-
-// // const falaNome = () =>  nome + ' ' + sobrenome;
-
-
-// // // module.exports.nome = nome;
-// // // module.exports.sobrenome = sobrenome;
-// // // module.exports.falaNome = falaNome;
-
-// // // console.log(module.exports);
-
-// // // Outra maneira de realizar;
+const axios = require('axios');
+// const cTable = require('console.table');
+// const { response } = require('express');
 
 
-// // // console.log(module.exports);
+axios('https://otaviomiranda.com.br/files/json/pessoas.json')
+.then(response => {
+    const pessoas = response.data.map(pessoa => ({
+        cpf: pessoa.cpf,
+        email: pessoa.email
+    }))
+    console.log(pessoas)
+})
+.catch(e => console.log(e));
 
-// // exports.nome = nome;
-// // exports.sobrenome = sobrenome;
-// // exports.falaNome = falaNome;
-
-
-// // // console.log(exports);
-
-// class Pessoa {
-//     constructor(nome) {
-//         this.nome = nome;
-//     }
-// }
-
-// exports.Pessoa = Pessoa;
