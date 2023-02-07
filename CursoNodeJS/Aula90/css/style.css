@@ -1,0 +1,33 @@
+nav{
+    display: flex;
+    background-color: rgb(205, 88, 212);
+    border-radius: 5px;
+    color: aliceblue;
+    align-content: left;
+    justify-content: left;    
+}
+
+ul{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: larger;   
+}
+
+a{
+    color: aliceblue;
+    font-size: larger;
+}
+
+
+img{
+    height: 55px;
+    width: 55px;
+    border-radius: 80%;
+    margin-right: 60px;
+    margin-left: 40px;
+    margin-top: 5px;
+}
+
+
+body{
+    background-color:rgb(197, 138, 204);
+}
