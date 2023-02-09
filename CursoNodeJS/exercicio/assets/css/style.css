@@ -78,6 +78,12 @@ div.inf2 {
     margin-left: 70px;
 }
 
-.paragrado-resultado{
+.paragrafo-resultado{
     background: rgb(137, 209, 152);
+    padding: 10px 20px;
+}
+
+.bad {
+    background: rgb(215, 114, 114);
+    padding: 10px 20px;
 }
