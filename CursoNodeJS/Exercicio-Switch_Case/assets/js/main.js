@@ -41,8 +41,6 @@ function getDiaSemana(diaSemana) {
 
 
 
-
-
 function getMes(mes) {
 
     let mesTexto;
@@ -102,8 +100,8 @@ function getMes(mes) {
     
   //  const cotainer = document.querySelector('container');
     let dataAtual = document.querySelector('dataAtual');
-    const mt = `${diaSemanaT}, ${dia} de ${diaMes} de ${ano} ${hora}:${min}`;
-    dataAtual = document.write(mt);
+    const mt = `$<p>{diaSemanaT}, ${dia} de ${diaMes} de ${ano} ${hora}:${min}</p>`;
+    dataAtual = document.wrile(mt);
     // mt.innerHTML = 'resultado'.mt;
 
   
