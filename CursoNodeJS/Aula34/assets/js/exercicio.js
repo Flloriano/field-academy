@@ -10,4 +10,14 @@ const elementos = [
 // h1.innerHTML = 'teste';
 
 const container = document.querySelector('.container');
-container.innerHTML = elementos.length;
+const div = document.createElement('div');
+
+
+for(i=0; i > elementos.length; i++){
+    let {tag, text} = elementos[i];
+    let tagCriada = document.createElement(tag);
+    tagCriada.innerHTML = texto;
+    div.appendChild(tagCriada);
+}
+
+container.appendChild(div);
