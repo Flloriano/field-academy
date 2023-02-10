@@ -10,6 +10,7 @@ const seg = data.getMilliseconds();
 
 
 function getDiaSemana(diaSemana) {
+
     let diaSemanaTexto;
 
     switch (diaSemana) {
@@ -46,16 +47,18 @@ function getMes(mes) {
 
     let mesTexto;
 
-    switch (mes) {
+    switch(mes) {
         case 0:
             mesTexto = 'Janeiro';
-            return diaSemanaTexto;
+            return mesTexto;
+
         case 1:
             mesTexto = 'Fevereiro';
-            return diaSemanaTexto;
+            return mesTexto;
+        
         case 2:
             mesTexto = 'Março';
-            return diaSemanaTexto;
+            return mesTexto;
         case 3:
             mesTexto = 'Abril';
             return mesTexto;
@@ -88,9 +91,19 @@ function getMes(mes) {
             return mesTexto;
     }
 
+}
+
 
     const diaSemanaT = getDiaSemana(diaSemana);
     const diaMes = getMes(mes);
 
+    //let resultado = `${diaSemanaT}, ${dia} de ${diaMes} de ${ano} ${hora}:${min}`;
+    //console.log(resultado);
+    
+  //  const cotainer = document.querySelector('container');
+    let dataAtual = document.querySelector('dataAtual');
+    const mt = `${diaSemanaT}, ${dia} de ${diaMes} de ${ano} ${hora}:${min}`;
+    dataAtual = document.write(mt);
+    // mt.innerHTML = 'resultado'.mt;
 
-    console.log(diaSemanaT, diaMes);
+  
