@@ -1,3 +1,4 @@
+import { parse } from 'json2csv';
 const axios = require('axios');
 const cTable = require('console.table');
 
@@ -17,6 +18,18 @@ axios('https://otaviomiranda.com.br/files/json/pessoas.json')
    console.log(table);
 })
 .catch(e => console.log(e));
+
+
+
+const obj = [
+  { firstName: 'Russell', lastName: 'Castillo', age: 23 },
+  { firstName: 'Christy', lastName: 'Harper', age: 35 },
+  { firstName: 'Eleanor', lastName: 'Mark', age: 26 },
+];
+
+const csv = parse(obj);
+
+console.log(csv);
 
 
 // import { stringify } from 'csv-stringify/sync';
