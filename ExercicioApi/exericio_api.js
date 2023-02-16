@@ -31,15 +31,15 @@ axios('https://otaviomiranda.com.br/files/json/pessoas.json')
 // console.log(csv);
 
 
-import { stringify } from 'csv-stringify';
-const run = () => {
-    const output = stringify([
-        { test: 'oloco', test2: 'a'},
-        { test: 'oloc2' },
-    ], {
-        header: true,
-        objectMode: true
-    });
-    console.log(output);
-}
-run();
+// import { stringify } from 'csv-stringify';
+// const run = () => {
+//     const output = stringify([
+//         { test: 'oloco', test2: 'a'},
+//         { test: 'oloc2' },
+//     ], {
+//         header: true,
+//         objectMode: true
+//     });
+//     console.log(output);
+// }
+// run();
