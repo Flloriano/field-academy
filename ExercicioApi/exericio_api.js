@@ -1,4 +1,3 @@
-import { parse } from 'json2csv';
 const axios = require('axios');
 const cTable = require('console.table');
 
@@ -20,27 +19,27 @@ axios('https://otaviomiranda.com.br/files/json/pessoas.json')
 .catch(e => console.log(e));
 
 
+// import { parse } from 'json2csv';
+// const obj = [
+//   { firstName: 'Russell', lastName: 'Castillo', age: 23 },
+//   { firstName: 'Christy', lastName: 'Harper', age: 35 },
+//   { firstName: 'Eleanor', lastName: 'Mark', age: 26 },
+// ];
 
-const obj = [
-  { firstName: 'Russell', lastName: 'Castillo', age: 23 },
-  { firstName: 'Christy', lastName: 'Harper', age: 35 },
-  { firstName: 'Eleanor', lastName: 'Mark', age: 26 },
-];
+// const csv = parse(obj);
 
-const csv = parse(obj);
-
-console.log(csv);
+// console.log(csv);
 
 
-// import { stringify } from 'csv-stringify/sync';
-// const run = () => {
-//     const output = stringify([
-//         { test: 'oloco', test2: 'a'},
-//         { test: 'oloc2' },
-//     ], {
-//         header: true,
-//         objectMode: true
-//     });
-//     console.log(output);
-// }
-// run();
+import { stringify } from 'csv-stringify';
+const run = () => {
+    const output = stringify([
+        { test: 'oloco', test2: 'a'},
+        { test: 'oloc2' },
+    ], {
+        header: true,
+        objectMode: true
+    });
+    console.log(output);
+}
+run();
