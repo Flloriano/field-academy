@@ -1,4 +1,18 @@
-axios('pessoas.json')
-  .then(resposta => carregaElementosNaPagina(resposta.data));
- console.log(carregaElementosNaPagina);
-  
+const axios = require('axios');
+const cTable = require('console.table');
+// const { response } = require('express');
+
+
+axios('https://otaviomiranda.com.br/files/json/pessoas.json')
+.then(response => {
+    const pessoas = response.data.map(pessoa => ({
+        cpf: pessoa.cpf,
+        email: pessoa.email,
+        empresa: pessoa.empresa
+    }))
+   
+   const table = cTable.getTable(pessoas);
+
+   console.log(table);
+})
+.catch(e => console.log(e));
