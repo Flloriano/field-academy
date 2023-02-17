@@ -9,7 +9,8 @@ axios('https://otaviomiranda.com.br/files/json/pessoas.json')
         email: pessoa.email,
         empresa: pessoa.empresa,
         estado: pessoa.estado,
-        salario: pessoa.salario
+        salario: pessoa.salario.toLocaleString('pt-BR', {style:'currency', currency: 'BRL' }) //para deixar valor formatado em real
+        
     }))
    
    const table = cTable.getTable(pessoas);
@@ -43,3 +44,18 @@ axios('https://otaviomiranda.com.br/files/json/pessoas.json')
 //     console.log(output);
 // }
 // run();
+
+axios('https://otaviomiranda.com.br/files/json/pessoas.json')
+.then(response => {
+    const csv = response.data.map(function(row){
+    let fields;
+    return fields.map(function(fieldName){
+    return JSON.stringify(row[fieldName], replacer)
+    }).join(',')
+ 
+})
+    csv.unshift(fields.join(','))
+    csv = csv.join('\r\n');
+    console.log(csv)
+})
+  

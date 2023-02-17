@@ -1,28 +1,35 @@
-const axios = require('axios').default
-const cTable = require('console.table')
-const getEndereco = async (cep) => {
-    try {
-        const BuscarCepURL = `https://viacep.com.br/ws/${cep}/json/`
-        const {data} = await axios.get(BuscarCepURL)
+//const axios = require('axios').default;
+const prompt = require('prompt-sync')();
+const cepv = prompt('Digite o CEP: ');
+const cep = cepv;
+const cTable = require('console.table');
 
-        const table = cTable.getTable([
-            {
-                
-                cep: data.cep,
-                logradouro: data.logradouro,
-                bairro: data.bairro,
-                uf: data.uf,
-                cidade: data.localidade
+axios = (`https://viacep.com.br/ws/${cep}/json`)
+    .then(function(resposta){
+        //console.log(resposta);
+        return resposta;
+    })
+    .catch(function(error){
+        console.log(error);
+    })
 
-            }
-        ])
+console.log(data);
+
+
+// const BuscarCepURL = `https://viacep.com.br/ws/${cep}/json/`
+// const {data} = axios.get(BuscarCepURL);
+// console.log({data}.cTable.cep);
+// const table = data.getTable([
+//     {
         
-        console.log(table);
+//         cep: data.cep,
+//         logradouro: data.logradouro,
+//         bairro: data.bairro,
+//         uf: data.uf
 
-        return data
-    } catch (error) {
-        console.error(error)
-    }
-}
+//     }
+// ])
 
-module.exports = { getEndereco }
+
+
+// console.log(BuscarCepURL);
