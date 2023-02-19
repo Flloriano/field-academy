@@ -4,7 +4,7 @@
   "description": "",
   "main": "exericio_api.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "type": "module"
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +13,9 @@
     "console.table": "^0.10.0",
     "csv": "^6.2.7",
     "csv-stringify": "^6.2.4",
-    "json2csv": "^6.0.0-alpha.2"
+    "csv-writer": "^1.6.0",
+    "fast-csv": "^4.3.6",
+    "json2csv": "^6.0.0-alpha.2",
+    "ts-node": "^10.9.1"
   }
 }

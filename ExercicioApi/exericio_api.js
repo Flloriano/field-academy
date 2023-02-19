@@ -2,6 +2,7 @@ const axios = require('axios');
 const cTable = require('console.table');
 
 
+tocsv = (
 axios('https://otaviomiranda.com.br/files/json/pessoas.json')
 .then(response => {
     const pessoas = response.data.map(pessoa => ({
@@ -17,45 +18,9 @@ axios('https://otaviomiranda.com.br/files/json/pessoas.json')
 
    console.log(table);
 })
-.catch(e => console.log(e));
+.catch(e => console.log(e))
+);
 
 
-// import { parse } from 'json2csv';
-// const obj = [
-//   { firstName: 'Russell', lastName: 'Castillo', age: 23 },
-//   { firstName: 'Christy', lastName: 'Harper', age: 35 },
-//   { firstName: 'Eleanor', lastName: 'Mark', age: 26 },
-// ];
-
-// const csv = parse(obj);
-
-// console.log(csv);
 
 
-// import { stringify } from 'csv-stringify';
-// const run = () => {
-//     const output = stringify([
-//         { test: 'oloco', test2: 'a'},
-//         { test: 'oloc2' },
-//     ], {
-//         header: true,
-//         objectMode: true
-//     });
-//     console.log(output);
-// }
-// run();
-
-axios('https://otaviomiranda.com.br/files/json/pessoas.json')
-.then(response => {
-    const csv = response.data.map(function(row){
-    let fields;
-    return fields.map(function(fieldName){
-    return JSON.stringify(row[fieldName], replacer)
-    }).join(',')
- 
-})
-    csv.unshift(fields.join(','))
-    csv = csv.join('\r\n');
-    console.log(csv)
-})
-  
