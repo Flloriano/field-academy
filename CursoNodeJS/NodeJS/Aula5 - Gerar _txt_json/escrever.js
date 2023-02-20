@@ -17,6 +17,6 @@ const fs = require('fs').promises;
 // const json = JSON.stringify(pessoas, '', 2)
 
 module.exports = (caminho, dados) => {
-    fs.writeFile(caminho, dados, { flag: 'w'}); //encoding: 'utf8' });
+    fs.writeFile(caminho, dados, { flag: 'w'}); //encoding: 'utf8' }); quando for utilizado w na flag ele apagar e reescreve quando utiliza a reescreve
 };
 
