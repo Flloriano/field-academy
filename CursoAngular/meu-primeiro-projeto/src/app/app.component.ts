@@ -12,8 +12,13 @@ import { Component, OnInit } from '@angular/core'; //AfterContentChecked, AfterC
 @Component({
   selector: 'app-root',
   template:`<!--app-data-binding></app-data-binding-->
-  <app-diretivas-estruturais></app-diretivas-estruturais>
-    <router-outlet></router-outlet>
+  <!--app-diretivas-estruturais></app-diretivas-estruturais-->
+  <!--app-diretivas-atributos>
+    <h1>Aula de Diretivas de Atributos</h1>
+    <hr>
+  </app-diretivas-atributos-->
+  <app-diretivas-atributos></app-diretivas-atributos>  
+  <router-outlet></router-outlet>
   `
 })
 export class AppComponent implements OnInit {    //DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked {
