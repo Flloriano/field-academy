@@ -11,13 +11,14 @@ import { Component, OnInit } from '@angular/core'; //AfterContentChecked, AfterC
 
 @Component({
   selector: 'app-root',
-  template:`<!--app-data-binding></app-data-binding-->
-  <!--app-diretivas-estruturais></app-diretivas-estruturais-->
-  <!--app-diretivas-atributos>
-    <h1>Aula de Diretivas de Atributos</h1>
-    <hr>
-  </app-diretivas-atributos-->
-  <app-diretivas-atributos></app-diretivas-atributos>  
+  template:`
+  <!--app-input [contador]="addValue"></app-input>
+  <button (click)="add()">Add</button-->
+  <ng-template [ngIf]="getDados">
+    <h1>{{getDados.nome}}</h1>
+    <h2>{{getDados.idade}}</h2>
+  </ng-template>
+  <app-output (enviarDados)="setDados($event)"></app-output>
   <router-outlet></router-outlet>
   `
 })
@@ -25,6 +26,18 @@ export class AppComponent implements OnInit {    //DoCheck, AfterContentInit, Af
 
   constructor() { 
   }
+
+  public addValue: number = 0;
+  public getDados: {nome: string, idade: number } | undefined;
+
+  public add(){
+    this.addValue += 1;
+  }
+
+  public setDados(event: { nome: string, idade: number }){
+    this.getDados = event;
+  }
+
 
   ngOnInit(): void { }
   // ngDoCheck(): void { 
@@ -49,4 +62,4 @@ export class AppComponent implements OnInit {    //DoCheck, AfterContentInit, Af
 //ng g c title
 
 
-// comando para criar componente no pelo terminal ng g c [nome do componente a ser criado]
+// comando para criar componente no pelo terminal ng g c [nome do componente a ser criado] <app-input></app-input> 
