@@ -17,13 +17,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { PaginatorComponent } from './characters/paginator/paginator.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     CharacterComponent,
-    CharactersComponent
+    CharactersComponent,
+    PaginatorComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     HttpClientModule,
     FlexLayoutModule,
     MatCardModule,
-    MatFormFieldModule  
+    MatFormFieldModule,  
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
