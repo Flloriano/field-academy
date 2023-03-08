@@ -1,14 +1,17 @@
 <div fxFlex fxLayout="column">
     <div fxLayout="row wrap">
-        <div fxFlex="17" fxFlex.md="20" fxFlex.sm="40" fxFlex.xs="50" fxLayout="column" *ngFor="let character of allCharacters | async" style="padding: 5px">
+        <div fxFlex="20" fxFlex.md="20" fxFlex.sm="40" fxFlex.xs="50" fxLayout="column"
+            *ngFor="let character of allCharacters | async" style="padding: 5px">
             <mat-card>
-                <img mat-card-image src={{character.thumbnail.path}}.{{character.thumbnail.extension}} alt="{{ character.name }}" style="padding: 10px;">
+                <img mat-card-image src={{character.thumbnail.path}}.{{character.thumbnail.extension}}
+                    alt="{{ character.name }}" style="padding: 10px;">
                 <mat-card-title>
                     {{character.name}}
                 </mat-card-title>
             </mat-card>
-
         </div>
+        <mat-paginator [length]="30" [pageSize]="3" [pageSizeOptions]="[3, 6, 9, 30]" aria-label="mat-card">
+        </mat-paginator>
     </div>
 </div>
 
