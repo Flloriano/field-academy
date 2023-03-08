@@ -1,2 +1,19 @@
+<div fxFlex fxLayout="column">
+    <div fxLayout="row wrap">
+        <div fxFlex="17" fxFlex.md="20" fxFlex.sm="40" fxFlex.xs="50" fxLayout="column" *ngFor="let character of allCharacters | async" style="padding: 5px">
+            <mat-card>
+                <img mat-card-image src={{character.thumbnail.path}}.{{character.thumbnail.extension}} alt="{{ character.name }}" style="padding: 10px;">
+                <mat-card-title>
+                    {{character.name}}
+                </mat-card-title>
+            </mat-card>
+
+        </div>
+    </div>
+</div>
+
+
+
+<!-- 
 <p *ngFor="let character of allCharacters | async">
-    {{ character | json}}</p>
+    {{ character | json}}</p> -->
